@@ -2,6 +2,8 @@
 {
     public enum UserGroup
     {
-        Employee, Admin
+        Employee,
+        Supervisor,
+        Admin
     }
 }

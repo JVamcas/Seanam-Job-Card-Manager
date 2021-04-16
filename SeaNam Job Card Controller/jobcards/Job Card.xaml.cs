@@ -1,10 +1,12 @@
 ﻿using System.Windows.Controls;
+using SeaNam_Job_Card_Controller.model;
 
-namespace SeaNam_Job_Card_Controller
+namespace SeaNam_Job_Card_Controller.jobcards
 {
-    public partial class Job_Card : UserControl
+    public partial class JobCard : UserControl
     {
-        public Job_Card()
+        public model.JobCard JobCardDetails = new model.JobCard();
+        public JobCard()
         {
             InitializeComponent();
         }

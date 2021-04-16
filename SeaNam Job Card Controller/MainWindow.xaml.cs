@@ -15,7 +15,12 @@ namespace SeaNam_Job_Card_Controller
 
         private void NewJobCard_OnClick(object sender, RoutedEventArgs e)
         {
-            MainWindowPanel.Source = new Uri("Job Card.xaml", UriKind.RelativeOrAbsolute);
+            MainWindowPanel.Source = new Uri("jobcards/Job Card.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void ViewEditJobCard_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainWindowPanel.Source = new Uri("jobcards/JobCardTable.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

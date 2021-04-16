@@ -3,24 +3,80 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:SeaNam_Job_Card_Controller.jobcards"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:model="clr-namespace:SeaNam_Job_Card_Controller.model"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"
-      Title="JobCardTable" Height="450" Width="800">
+      Title="Job Card Table" Height="900" Width="Auto">
+    <Page.Resources>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border BorderThickness="1,2" BorderBrush="DarkGray">
+                            <TextBlock  x:Name="ContentHeader" Foreground="Azure" 
+                                        Background="Purple" Text="{TemplateBinding Content}" 
+                                        Padding="5" Width="{TemplateBinding Width}" TextAlignment="Left"
+                                        FontSize="16" FontWeight="Bold"
+                                        />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        
+        <Style TargetType="ListViewItem" BasedOn="{StaticResource MaterialDesignGridViewItem}">
+            <Setter Property="Border.Background" Value="Aqua" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="Green" />
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
+        <ListView Grid.Row="0"
+                  Margin="10" ItemsSource="{ Binding JobCardList }">
+            <ListView.View>
+                <GridView AllowsColumnReorder="true">
+                    <GridViewColumn Header="Job Card No" Width="Auto" DisplayMemberBinding="{Binding  Path=JobCardNo}" />
+                    <GridViewColumn Header="Job Title" Width="Auto" DisplayMemberBinding="{Binding JobTitle}" />
+                    <GridViewColumn Header="Job Description" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock TextAlignment="Left" TextWrapping="WrapWithOverflow" Text="{Binding JobDescription }" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Job Class" Width="Auto" DisplayMemberBinding="{Binding JobClass}" />
+                    <GridViewColumn Header="Work Area" Width="Auto" DisplayMemberBinding="{Binding WorkArea}" />
+                    <GridViewColumn Header="Completed By" Width="Auto" DisplayMemberBinding="{Binding Employee}" />
+                    <GridViewColumn Header="Date Created" Width="Auto" DisplayMemberBinding="{Binding CreateDate}" />
+                    <GridViewColumn Header="Start Time" Width="Auto" DisplayMemberBinding="{Binding StartTime}" />
+                    <GridViewColumn Header="End Time" Width="Auto" DisplayMemberBinding="{Binding EndTime}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Margin="10 0">Save</Button>
-            <Button Grid.Column="2" Margin="10 0">Cancel</Button>
+            <TextBox ToolTip="Enter job card number." Background="White" Padding="5"
+                     Style="{DynamicResource MaterialDesignOutlinedTextBox}" Grid.Column="1" Width="200" Margin="10" />
+            <Button ToolTip="Find job card" Content="{materialDesign:PackIcon Search}" Grid.Column="2" Margin="10" />
         </Grid>
-      
     </Grid>
 </Page>

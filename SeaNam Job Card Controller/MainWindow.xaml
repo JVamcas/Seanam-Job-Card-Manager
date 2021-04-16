@@ -86,7 +86,7 @@
                             Width="180"
                             Height="100"
                             Foreground="Wheat"
-                            FontWeight="Bold">
+                            FontWeight="Bold" Click="ViewEditJobCard_OnClick">
                         View &amp; Edit Job Cards
                     </Button>
                     <Frame Grid.RowSpan="3" Grid.Column="1" x:Name="MainWindowPanel" VerticalAlignment="Stretch"

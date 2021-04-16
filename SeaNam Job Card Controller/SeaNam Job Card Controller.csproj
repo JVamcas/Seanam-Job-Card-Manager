@@ -101,11 +101,14 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="model\JobCard.cs" />
-        <Compile Include="model\JobCategory.cs" />
+        <Compile Include="model\JobCardViewModel.cs" />
+        <Compile Include="model\JobClass.cs" />
+        <Compile Include="model\JobTitle.cs" />
         <Compile Include="model\Orders.cs" />
         <Compile Include="model\User.cs" />
         <Compile Include="model\UserGroup.cs" />
         <Compile Include="model\WorkArea.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>
