@@ -13,6 +13,7 @@
              TextOptions.TextRenderingMode="Auto"
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
+             
              mc:Ignorable="d"
              Height="800" Width="830">
     <Grid>
@@ -27,6 +28,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Width="60" Margin="5 5">Job Title:</Label>
                     <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="5 5" Width="700"
+                             Text="{Binding JobTitle}"
                              ToolTip="The title for this job."
                              Padding="6" />
                 </StackPanel>
@@ -46,6 +48,7 @@
                 </StackPanel>
                 <GroupBox Header="Job Description" Margin="10">
                     <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}" Height="100" Width="Auto"
+                             Text="{Binding JobDescription}"
                              ToolTip="Detailed description of the job."
                              Name="WorkDescription" AcceptsReturn="True" />
                 </GroupBox>
@@ -68,6 +71,7 @@
                 <CheckBox Margin="5">Was the work down according to expectations?</CheckBox>
                 <GroupBox Margin="10" Header="If you did not check all the boxes above, Explain.">
                     <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}" Height="50" Width="Auto"
+                             Text="{Binding OtherExplanation}"
                              AcceptsReturn="True" />
                 </GroupBox>
                 <Grid>
@@ -77,9 +81,8 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="1" Margin="10 0"
-                            ToolTip="Save this job card."
-                            >Save</Button>
-                    <Button Grid.Column="2" Margin="10 0">Cancel</Button>
+                            ToolTip="Save this job card." Click="Button_OnClick">Save</Button>
+                    <Button Grid.Column="2" Margin="10 0" Click="Button_OnClick1">Clear</Button>
                 </Grid>
             </StackPanel>
         </GroupBox>
