@@ -1,19 +1,20 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using SeaNam_Job_Card_Controller.Annotations;
+using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.model
 {
     public class JobClass: INotifyPropertyChanged
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        
-        public int classNo { get; set; }
+        public string Name { get; set; } = "Default";
+
+        public int ClassNo { get; set; } = 0000;
         
         public override string ToString()
         {
-            return Name != null ? Name.Substring(0, 1) + Name.Substring(1) : " - ";
+            return ClassNo +" - "+ Name.ToTitleCase();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -24,4 +25,5 @@ namespace SeaNam_Job_Card_Controller.model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+    
 }

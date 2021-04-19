@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using SeaNam_Job_Card_Controller.Annotations;
+using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.model
 {
@@ -11,7 +12,7 @@ namespace SeaNam_Job_Card_Controller.model
         
         public override string ToString()
         {
-            return OrderNo != null ? OrderNo.Substring(0, 1) + OrderNo.Substring(1) : " - ";
+            return OrderNo != null ? OrderNo.ToTitleCase():"";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

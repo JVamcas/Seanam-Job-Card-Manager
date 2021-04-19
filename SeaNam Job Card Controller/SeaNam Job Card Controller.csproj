@@ -78,6 +78,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Utils\ParseUtils.cs" />
         <Page Include="jobcards\Job Card.xaml" />
         <Page Include="jobcards\JobCardTable.xaml" />
         <Page Include="MainWindow.xaml">
