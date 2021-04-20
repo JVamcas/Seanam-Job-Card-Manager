@@ -6,22 +6,10 @@ using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.repo
 {
-    public class JobCardRepo
+    public class JobCardRepo : AbstractRepo<JobCard>
     {
         private ISessionFactory _factory = HibernateUtils.NewInstance();
-
-        public void AddJobCard(JobCard jobCard)
-        {
-            using (var session = _factory.OpenSession())
-            {
-                using (var tx = session.BeginTransaction())
-                {
-                    session.CreateCriteria<JobCard>();
-                    tx.Commit();
-                }
-                session.Close();
-            }
-        }
+        
 
         public void UpdateJobCard(JobCard jobCard)
         {

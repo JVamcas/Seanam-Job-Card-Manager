@@ -15,7 +15,7 @@ namespace SeaNam_Job_Card_Controller.model
         public virtual WorkArea WorkArea { get; set; }
         public virtual JobClass JobClass { get; set; }
         public virtual List<Orders> OrderList { get; set; }
-        public virtual User Employee { get; set; }
+        public virtual Employee Employee { get; set; }
         public virtual DateTime CreateDate { get; set; }
         public virtual DateTime StartTime { get; set; }
         public virtual DateTime EndTime { get; set; }
@@ -25,6 +25,7 @@ namespace SeaNam_Job_Card_Controller.model
         public virtual Boolean IsTimeFrameSatisfactory { get; set; } = false;
         public virtual Boolean IsJobDoneToExpectations { get; set; } = false;
         public virtual string OtherExplanation { get; set; }
+        public virtual Employee Supervisor { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

@@ -1,7 +1,7 @@
 ﻿SeaNam_Job_Card_Controller
 
 
-winexe
+exe
 C#
 .cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\
@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\App.xaml
-31714928791
+41527422536
 
-18-369450095
+212107317018
 25-308529342
-jobcards\Job Card.xaml;jobcards\JobCardTable.xaml;MainWindow.xaml;
+MainWindow.xaml;ui\jobcards\Job Card.xaml;ui\jobcards\JobCardTable.xaml;ui\WorkAreaPage.xaml;
 
 False
 

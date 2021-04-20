@@ -4,7 +4,7 @@ using SeaNam_Job_Card_Controller.Annotations;
 
 namespace SeaNam_Job_Card_Controller.model
 {
-    public class User: INotifyPropertyChanged
+    public class Employee: INotifyPropertyChanged
     {
         public virtual int Id { get; set; }
         public virtual string FirstName { get; set; }

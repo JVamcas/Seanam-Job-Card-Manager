@@ -46,7 +46,7 @@
                             <ContextMenu>
                                 <MenuItem Header="Edit" />
                                 <MenuItem Header="Delete" />
-                                <MenuItem Header="Add Area" />
+                                <MenuItem Header="Add Area" Click="AddWorkArea_OnClick"/>
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>

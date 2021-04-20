@@ -5,7 +5,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{6C3B3107-CF4E-4DB1-B234-CA6C28A2AF9D}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <RootNamespace>SeaNam_Job_Card_Controller</RootNamespace>
         <AssemblyName>SeaNam_Job_Card_Controller</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -102,11 +102,20 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="repo\AbstractRepo.cs" />
         <Compile Include="repo\JobCardRepo.cs" />
+        <Compile Include="repo\WorkAreaRepo.cs" />
+        <Compile Include="ui\jobcards\Job Card.xaml.cs">
+          <DependentUpon>Job Card.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="ui\jobcards\JobCardTable.xaml.cs">
+          <DependentUpon>JobCardTable.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="ui\WorkAreaPage.xaml.cs">
+          <DependentUpon>WorkAreaPage.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Utils\HibernateUtils.cs" />
         <Compile Include="Utils\ParseUtils.cs" />
-        <Page Include="jobcards\Job Card.xaml" />
-        <Page Include="jobcards\JobCardTable.xaml" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -115,16 +124,13 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="jobcards\Job Card.xaml.cs">
-          <DependentUpon>Job Card.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="jobcards\JobCardTable.xaml.cs">
-          <DependentUpon>JobCardTable.xaml</DependentUpon>
-        </Compile>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="ui\jobcards\Job Card.xaml" />
+        <Page Include="ui\jobcards\JobCardTable.xaml" />
+        <Page Include="ui\WorkAreaPage.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="model\JobCard.cs" />
@@ -159,7 +165,7 @@
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-      <EmbeddedResource Include="hbm.xml">
+      <EmbeddedResource Include="WorkArea.hbm.xml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seanam Job Card Assembly.model" 
+                   assembly="Seanam Job Card Assembly">
+
+    <class name="WorkArea" table="WorkArea">
+        <id name="Id">
+            <column name="work_Id" sql-type="int" not-null="true"/>
+            <generator class="native"/>
+        </id>
+        <!-- A cat has to have a name, but it shouldn' be too long. -->
+        <property name="Name">
+            <column name="Name" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

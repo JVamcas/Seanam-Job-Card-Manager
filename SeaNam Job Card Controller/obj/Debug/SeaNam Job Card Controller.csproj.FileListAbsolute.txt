@@ -1,6 +1,5 @@
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam Job Card Controller.csprojAssemblyReference.cache
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\MainWindow.baml
-C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\jobcards\Job Card.g.cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\MainWindow.g.cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\App.g.cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam_Job_Card_Controller_MarkupCompile.cache
@@ -30,10 +29,7 @@ C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controlle
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\jobcards\JobCardTable.g.cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\App.baml
-C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\jobcards\Job Card.baml
-C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\jobcards\JobCardTable.baml
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam_Job_Card_Controller.g.resources
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam_Job_Card_Controller.Properties.Resources.resources
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam Job Card Controller.csproj.GenerateResource.cache
@@ -42,7 +38,6 @@ C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controlle
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam_Job_Card_Controller.exe
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\SeaNam_Job_Card_Controller.pdb
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\hibernate.cfg.xml
-C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\hbm.xml
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\Antlr3.Runtime.dll
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\Iesi.Collections.dll
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\NHibernate.dll
@@ -53,3 +48,10 @@ C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controlle
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\NHibernate.xml
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\Remotion.Linq.xml
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\Job Card.g.cs
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\JobCardTable.g.cs
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\WorkAreaPage.g.cs
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\Job Card.baml
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\JobCardTable.baml
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\WorkAreaPage.baml
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\bin\Debug\WorkArea.hbm.xml

@@ -3,8 +3,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using MaterialDesignThemes.Wpf;
 using SeaNam_Job_Card_Controller.Annotations;
 using SeaNam_Job_Card_Controller.model;
+using SeaNam_Job_Card_Controller.ui;
 
 namespace SeaNam_Job_Card_Controller.jobcards
 {
@@ -41,6 +43,12 @@ namespace SeaNam_Job_Card_Controller.jobcards
         {
             _jobCardDetails = new model.JobCard();
             DataContext = _jobCardDetails;
+        }
+
+        private void AddWorkArea_OnClick(object sender, RoutedEventArgs e)
+        {
+            WorkAreaPage workAreaPage = new WorkAreaPage();
+            workAreaPage.ShowDialog();
         }
     }
 }
