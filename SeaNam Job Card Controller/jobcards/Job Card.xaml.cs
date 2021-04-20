@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using SeaNam_Job_Card_Controller.Annotations;
@@ -17,19 +18,23 @@ namespace SeaNam_Job_Card_Controller.jobcards
         {
             InitializeComponent();
             DataContext = _jobCardDetails;
-            WorkAreaList.Add(new WorkArea(){Name = "Seanam"});
-            WorkAreaList.Add(new WorkArea(){Name = "NamOps Logistics Pty Ltd"});
+            WorkAreaList.Add(new WorkArea{Name = "Seanam"});
+            WorkAreaList.Add(new WorkArea{Name = "NamOps Logistics Pty Ltd"});
             WorkAreaCombo.ItemsSource = WorkAreaList;
-            WorkClassCombo.ItemsSource = JobClassList;
+            JobClassCombo.ItemsSource = JobClassList;
             
-            JobCardOrderList.Add(new Orders(){OrderNo = "JA091"});
-            JobCardOrderList.Add(new Orders(){OrderNo = "JA034"});
+            JobCardOrderList.Add(new Orders{OrderNo = "JA091"});
+            JobCardOrderList.Add(new Orders{OrderNo = "JA034"});
             OrdersCombo.ItemsSource = JobCardOrderList;
         }
 
         private void SaveJobCardBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(_jobCardDetails.JobDescription);
+            _jobCardDetails.JobClass = JobClassList[(int) JobClassCombo.SelectedItem];
+            _jobCardDetails.WorkArea = WorkAreaList[(int) JobClassCombo.SelectedItem];
+            _jobCardDetails.OrderList = JobCardOrderList.ToList();
+
+                // persist the jobcard to db    
         }
 
         private void ClearJobCardForm_OnClick(object sender, RoutedEventArgs e)

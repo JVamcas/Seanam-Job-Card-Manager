@@ -6,8 +6,8 @@ namespace SeaNam_Job_Card_Controller.model
 {
     public class JobTitle: INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string TitleValue { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string TitleValue { get; set; }
         
         public override string ToString()
         {

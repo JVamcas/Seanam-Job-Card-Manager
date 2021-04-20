@@ -53,7 +53,7 @@
                     <Label Width="Auto" Margin="5 5">Class:</Label>
                     <ComboBox Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
                               Margin="5 5"
-                              x:Name="WorkClassCombo"
+                              x:Name="JobClassCombo"
                               ToolTip="Class for this job."
                               SelectedItem="{Binding JobClass}"
                               IsSynchronizedWithCurrentItem="True"

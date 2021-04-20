@@ -7,8 +7,8 @@ namespace SeaNam_Job_Card_Controller.model
 {
     public class Orders : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string OrderNo { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string OrderNo { get; set; }
         
         public override string ToString()
         {

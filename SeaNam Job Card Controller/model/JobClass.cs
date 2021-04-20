@@ -7,10 +7,10 @@ namespace SeaNam_Job_Card_Controller.model
 {
     public class JobClass: INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = "Default";
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; } = "Default";
 
-        public int ClassNo { get; set; } = 0000;
+        public virtual int ClassNo { get; set; } = 0000;
         
         public override string ToString()
         {
