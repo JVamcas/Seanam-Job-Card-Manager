@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("job%20card.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("hibernate.conf.xml")]
 
 

@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using MaterialDesignThemes.Wpf;
-using SeaNam_Job_Card_Controller.Annotations;
 using SeaNam_Job_Card_Controller.model;
-using SeaNam_Job_Card_Controller.ui;
 
-namespace SeaNam_Job_Card_Controller.jobcards
+namespace SeaNam_Job_Card_Controller.ui.jobcards
 {
     public partial class JobCard : UserControl
     {
         private model.JobCard _jobCardDetails = new model.JobCard();
         private ObservableCollection<WorkArea> WorkAreaList = new ObservableCollection<WorkArea>();
         private ObservableCollection<JobClass> JobClassList = new ObservableCollection<JobClass>();
-        private ObservableCollection<Orders> JobCardOrderList = new ObservableCollection<Orders>();
+        private ObservableCollection<Order> JobCardOrderList = new ObservableCollection<Order>();
         public JobCard()
         {
             InitializeComponent();
@@ -25,8 +21,8 @@ namespace SeaNam_Job_Card_Controller.jobcards
             WorkAreaCombo.ItemsSource = WorkAreaList;
             JobClassCombo.ItemsSource = JobClassList;
             
-            JobCardOrderList.Add(new Orders{OrderNo = "JA091"});
-            JobCardOrderList.Add(new Orders{OrderNo = "JA034"});
+            JobCardOrderList.Add(new Order{OrderNo = "JA091"});
+            JobCardOrderList.Add(new Order{OrderNo = "JA034"});
             OrdersCombo.ItemsSource = JobCardOrderList;
         }
 

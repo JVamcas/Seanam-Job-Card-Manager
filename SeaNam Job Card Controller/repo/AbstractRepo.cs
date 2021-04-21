@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using System;
+using NHibernate;
 using SeaNam_Job_Card_Controller.model;
 using SeaNam_Job_Card_Controller.Utils;
 
@@ -15,10 +16,9 @@ namespace SeaNam_Job_Card_Controller.repo
             {
                 using (var tx = session.BeginTransaction())
                 {
-                    session.CreateCriteria<T>();
+                    session.SaveOrUpdate(model);
                     tx.Commit();
                 }
-
                 session.Close();
             }
         }

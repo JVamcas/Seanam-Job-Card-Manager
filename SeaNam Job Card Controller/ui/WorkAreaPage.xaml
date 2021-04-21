@@ -12,7 +12,6 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-
         mc:Ignorable="d"
         Title="Work Area" Height="180" Width="400">
     <Grid Margin="0 20" VerticalAlignment="Center">
