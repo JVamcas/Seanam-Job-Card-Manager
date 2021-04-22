@@ -14,7 +14,7 @@ namespace SeaNam_Job_Card_Controller.model
             return TitleValue != null ? TitleValue.Substring(0, 1) + TitleValue.Substring(1) : " - ";
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

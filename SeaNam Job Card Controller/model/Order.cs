@@ -15,7 +15,7 @@ namespace SeaNam_Job_Card_Controller.model
             return OrderNo != null ? OrderNo.ToTitleCase():"";
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -115,6 +115,7 @@
         <Compile Include="repo\AbstractRepo.cs" />
         <Compile Include="repo\JobCardRepo.cs" />
         <Compile Include="repo\WorkAreaRepo.cs" />
+        <Compile Include="ui\AbstractWindow.cs" />
         <Compile Include="ui\jobcards\Job Card.xaml.cs">
           <DependentUpon>Job Card.xaml</DependentUpon>
         </Compile>
@@ -144,7 +145,6 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="model\JobCard.cs" />
-        <Compile Include="model\JobCardViewModel.cs" />
         <Compile Include="model\JobClass.cs" />
         <Compile Include="model\JobTitle.cs" />
         <Compile Include="model\Order.cs" />
@@ -168,9 +168,6 @@
     <ItemGroup>
         <None Include="App.config" />
         <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="hibernate.conf.xml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

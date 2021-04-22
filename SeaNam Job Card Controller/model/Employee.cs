@@ -20,7 +20,7 @@ namespace SeaNam_Job_Card_Controller.model
             return fistName + " " + lastName;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
