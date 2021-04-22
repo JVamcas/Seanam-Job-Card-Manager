@@ -904,7 +904,7 @@ ALL PRIVILEGES|seanam_job_cards
     <table id="284" parent="9" name="jobcard"/>
     <table id="285" parent="9" name="jobclass"/>
     <table id="286" parent="9" name="jobtitle"/>
-    <table id="287" parent="9" name="order"/>
+    <table id="287" parent="9" name="ordernumbers"/>
     <table id="288" parent="9" name="workarea"/>
     <column id="289" parent="283" name="Id">
       <Position>1</Position>

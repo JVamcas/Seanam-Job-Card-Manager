@@ -23,7 +23,6 @@ namespace SeaNam_Job_Card_Controller.Utils
             {
                 target.Add(element);
             }
-
             return target;
         }
     }

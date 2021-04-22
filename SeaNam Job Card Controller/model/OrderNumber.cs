@@ -5,7 +5,7 @@ using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.model
 {
-    public class Order : INotifyPropertyChanged
+    public class OrderNumber : INotifyPropertyChanged
     {
         public virtual int Id { get; protected set; }
         public virtual string OrderNo { get; set; }

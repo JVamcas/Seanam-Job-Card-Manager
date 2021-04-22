@@ -15,7 +15,7 @@ namespace SeaNam_Job_Card_Controller.model
         public virtual string JobDescription { get; set; }
         public virtual WorkArea WorkArea { get; set; }
         public virtual JobClass JobClass { get; set; }
-        public virtual IList<Order> OrderList { get; set; }
+        public virtual IList<OrderNumber> OrderList { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual DateTime CreateDate { get; set; }
         public virtual DateTime StartTime { get; set; }
@@ -30,13 +30,9 @@ namespace SeaNam_Job_Card_Controller.model
 
         public JobCard()
         {
-            OrderList = new List<Order>();
+            OrderList = new List<OrderNumber>();
         }
-
-        public virtual void AddOrder(Order order)
-        {
-            OrderList.Add(order);
-        }
+        
         public virtual event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

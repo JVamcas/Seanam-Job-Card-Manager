@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using FluentNHibernate.Conventions;
+using MaterialDesignThemes.Wpf;
 using SeaNam_Job_Card_Controller.model;
 using SeaNam_Job_Card_Controller.repo;
 using SeaNam_Job_Card_Controller.Utils;
@@ -14,9 +15,12 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
     {
         private model.JobCard _jobCardDetails = new model.JobCard();
         private ObservableCollection<WorkArea> WorkAreaList;
-        private ObservableCollection<JobClass> JobClassList = new ObservableCollection<JobClass>();
-        private ObservableCollection<Order> JobCardOrderList = new ObservableCollection<Order>();
+        private ObservableCollection<JobClass> JobClassList;
+        private ObservableCollection<OrderNumber> JobCardOrderList;
         private WorkAreaRepo _workAreaRepo = new WorkAreaRepo();
+        private JobClassRepo _classRepo = new JobClassRepo();
+        private OrderRepo _orderRepo = new OrderRepo();
+
         public JobCard()
         {
             InitializeComponent();
@@ -25,15 +29,17 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
             WorkAreaList = new ObservableCollection<WorkArea>();
             var workAreas = _workAreaRepo.LoadModels();
             WorkAreaList.AddAll(workAreas);
-            
-            //
-            // WorkAreaList.Add(new WorkArea{Name = "Seanam"});
-            // WorkAreaList.Add(new WorkArea{Name = "NamOps Logistics Pty Ltd"});
+
+            JobClassList = new ObservableCollection<JobClass>();
+            var jobClassList = _classRepo.LoadModels();
+            JobClassList.AddAll(jobClassList);
+
+            JobCardOrderList = new ObservableCollection<OrderNumber>();
+            var orders = _orderRepo.LoadOrders(_jobCardDetails.Id);
+            JobCardOrderList.AddAll(orders);
+
             WorkAreaCombo.ItemsSource = WorkAreaList;
             JobClassCombo.ItemsSource = JobClassList;
-            
-            JobCardOrderList.Add(new Order{OrderNo = "JA091"});
-            JobCardOrderList.Add(new Order{OrderNo = "JA034"});
             OrdersCombo.ItemsSource = JobCardOrderList;
         }
 
@@ -52,13 +58,23 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void AddWorkArea_OnClick(object sender, RoutedEventArgs e)
         {
-            WorkAreaPage workAreaPage = new WorkAreaPage(WorkAreaList);
-            workAreaPage.ShowDialog();
+            var areaPage = new WorkAreaPage(WorkAreaList);
+            areaPage.ShowDialog();
         }
 
-        private void ReLoadData()
+        private void EditWorkArea_OnClick(object sender, RoutedEventArgs e)
         {
+            var area = (WorkArea)WorkAreaCombo.SelectedItem;
+            new WorkAreaPage(area).ShowDialog();
             
+        }
+
+        private void DeleteWorkArea_OnClick(object sender, RoutedEventArgs e)
+        {
+            var area = (WorkArea) WorkAreaCombo.SelectedItem;
+            _workAreaRepo.DeleteModel(area);
+            WorkAreaList.Clear();
+            WorkAreaList.AddAll(_workAreaRepo.LoadModels());
         }
     }
 }

@@ -34,18 +34,18 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Width="60" Margin="5 5">Area:</Label>
-                    <ComboBox Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                    <ComboBox Padding="6" 
+                              IsEditable="True" Focusable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
                               Margin="5 5"
                               ToolTip="The area where the job was done."
                               x:Name="WorkAreaCombo"
                               SelectedItem="{Binding WorkArea}"
                               IsSynchronizedWithCurrentItem="True"
-                              SelectedValuePath="Id"
                               Width="170">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Edit" />
-                                <MenuItem Header="Delete" />
+                                <MenuItem Header="Edit" Click="EditWorkArea_OnClick"/>
+                                <MenuItem Header="Delete" Click="DeleteWorkArea_OnClick"/>
                                 <MenuItem Header="Add Area" Click="AddWorkArea_OnClick"/>
                             </ContextMenu>
                         </ComboBox.ContextMenu>

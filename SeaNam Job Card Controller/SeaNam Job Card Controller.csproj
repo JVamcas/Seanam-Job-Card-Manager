@@ -113,7 +113,10 @@
         <Compile Include="mapping\OrderMap.cs" />
         <Compile Include="mapping\WorkAreaMap.cs" />
         <Compile Include="repo\AbstractRepo.cs" />
+        <Compile Include="repo\EmployeeRepo.cs" />
         <Compile Include="repo\JobCardRepo.cs" />
+        <Compile Include="repo\JobClassRepo.cs" />
+        <Compile Include="repo\OrderRepo.cs" />
         <Compile Include="repo\WorkAreaRepo.cs" />
         <Compile Include="ui\AbstractWindow.cs" />
         <Compile Include="ui\jobcards\Job Card.xaml.cs">
@@ -147,7 +150,7 @@
         <Compile Include="model\JobCard.cs" />
         <Compile Include="model\JobClass.cs" />
         <Compile Include="model\JobTitle.cs" />
-        <Compile Include="model\Order.cs" />
+        <Compile Include="model\OrderNumber.cs" />
         <Compile Include="model\Employee.cs" />
         <Compile Include="model\UserGroup.cs" />
         <Compile Include="model\WorkArea.cs" />

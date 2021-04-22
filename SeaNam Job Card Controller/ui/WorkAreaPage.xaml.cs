@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
 using SeaNam_Job_Card_Controller.model;
 using SeaNam_Job_Card_Controller.repo;
 using SeaNam_Job_Card_Controller.Utils;
@@ -12,12 +10,19 @@ namespace SeaNam_Job_Card_Controller.ui
     public partial class WorkAreaPage : AbstractWindow
     {
         private readonly WorkAreaRepo _repo = new WorkAreaRepo();
-        private readonly WorkArea _workArea = new WorkArea();
+        private readonly WorkArea _workArea;
         private readonly ObservableCollection<WorkArea> _workAreaList = new ObservableCollection<WorkArea>();
 
         public WorkAreaPage()
         {
             InitializeComponent();
+            _workArea = new WorkArea();
+            DataContext = _workArea;
+        }
+
+        public WorkAreaPage(WorkArea area) : this()
+        {
+            _workArea = area;
             DataContext = _workArea;
         }
 
@@ -31,14 +36,20 @@ namespace SeaNam_Job_Card_Controller.ui
             try
             {
                 _repo.AddModel(_workArea);
-                _workAreaList.Clear();
-                var tempAreas = _repo.LoadModels();
-                _workAreaList.AddAll(tempAreas);
+                RefreshComboListItem();
+                Close();
             }
             catch (Exception exception)
             {
                 Console.WriteLine(exception.StackTrace);
             }
+        }
+
+        private void RefreshComboListItem()
+        {
+            _workAreaList.Clear();
+            var tempArea = _repo.LoadModels();
+            _workAreaList.AddAll(tempArea);
         }
     }
 }

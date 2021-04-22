@@ -40,9 +40,9 @@ namespace SeaNam_Job_Card_Controller.Utils
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<WorkAreaMap>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JobClassMap>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JobTitleMap>())
-                        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<OrderMap>())
+                        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<OrderNumberMap>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JobCardMap>())
-                        .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false))
+                        // .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(true, true))
                         .BuildSessionFactory();
                 }
             }
