@@ -25,17 +25,45 @@
         </Grid.RowDefinitions>
         <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" Header="Job Card Details" Margin="10 0">
             <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <Label Width="60" Margin="5 5">Job Title:</Label>
-                    <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="5 5" Width="700"
-                             Text="{Binding JobTitle}"
-                             ToolTip="The title for this job."
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Label HorizontalAlignment="Right" Grid.Column="0" Margin="5 5">Job Card No:</Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}" 
+                             Margin="5 5"
+                             Text="{Binding JobCardNo}"
+                             ToolTip="The job card number."
                              Padding="6" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Width="60" Margin="5 5">Area:</Label>
-                    <ComboBox Padding="6" 
-                              IsEditable="True" Focusable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                    <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="5 5">Class:</Label>
+                    <ComboBox Grid.Row="0" Grid.Column="3" Padding="6" IsEditable="True"
+                              Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                              Margin="5 5"
+                              x:Name="JobClassCombo"
+                              ToolTip="Class for this job."
+                              SelectedItem="{Binding JobClass}"
+                              IsSynchronizedWithCurrentItem="True"
+                              SelectedValuePath="Id"
+                              Width="220">
+                        <ComboBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Edit" Click="EditJobClass_OnClick" />
+                                <MenuItem Header="Delete" Click="DeleteJobClass_OnClick" />
+                                <MenuItem Header="Add Class" Click="AddJobClass_OnClick" />
+                            </ContextMenu>
+                        </ComboBox.ContextMenu>
+                    </ComboBox>
+                    <Label Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" Width="60" Margin="5 5">Area:</Label>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Padding="6"
+                              IsEditable="True" Focusable="True"
+                              Style="{DynamicResource MaterialDesignOutlinedComboBox}"
                               Margin="5 5"
                               ToolTip="The area where the job was done."
                               x:Name="WorkAreaCombo"
@@ -44,31 +72,15 @@
                               Width="170">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Edit" Click="EditWorkArea_OnClick"/>
-                                <MenuItem Header="Delete" Click="DeleteWorkArea_OnClick"/>
-                                <MenuItem Header="Add Area" Click="AddWorkArea_OnClick"/>
+                                <MenuItem Header="Edit" Click="EditWorkArea_OnClick" />
+                                <MenuItem Header="Delete" Click="DeleteWorkArea_OnClick" />
+                                <MenuItem Header="Add Area" Click="AddWorkArea_OnClick" />
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>
-                    <Label Width="Auto" Margin="5 5">Class:</Label>
-                    <ComboBox Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                              Margin="5 5"
-                              x:Name="JobClassCombo"
-                              ToolTip="Class for this job."
-                              SelectedItem="{Binding JobClass}"
-                              IsSynchronizedWithCurrentItem="True"
-                              SelectedValuePath="Id"
-                              Width="170">
-                        <ComboBox.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Edit" Click="EditJobClass_OnClick"/>
-                                <MenuItem Header="Delete" Click="DeleteJobClass_OnClick" />
-                                <MenuItem Header="Add Class" Click="AddJobClass_OnClick"/>
-                            </ContextMenu>
-                        </ComboBox.ContextMenu>
-                    </ComboBox>
-                    <Label Width="Auto" Margin="5 5">Order Number(s):</Label>
-                    <ComboBox Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+
+                    <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Width="Auto" Margin="5 5">Order Number(s):</Label>
+                    <ComboBox Grid.Row="1" Grid.Column="3" Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
                               Margin="5 5"
                               x:Name="OrdersCombo"
                               ToolTip="Orders related to this job."
@@ -80,12 +92,12 @@
                         <ComboBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Edit" Click="EditOrderNo_OnClick" />
-                                <MenuItem Header="Delete"  Click="DeleteOrderNo_OnClick"/>
-                                <MenuItem Header="Add Order"  Click="AddOrderNo_OnClick"/>
+                                <MenuItem Header="Delete" Click="DeleteOrderNo_OnClick" />
+                                <MenuItem Header="Add Order" Click="AddOrderNo_OnClick" />
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>
-                </StackPanel>
+                </Grid>
                 <GroupBox Header="Job Description" Margin="10">
                     <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}" Height="100" Width="Auto"
                              Text="{Binding JobDescription}"
@@ -128,8 +140,10 @@
                             ToolTip="Save this job card." Click="SaveJobCardBtn_OnClick">
                         Save
                     </Button>
-                    <Button x:Name="ClearJobCardForm" Grid.Column="2" Margin="10 0" 
-                            Click="ClearJobCardForm_OnClick">Clear</Button>
+                    <Button x:Name="ClearJobCardForm" Grid.Column="2" Margin="10 0"
+                            Click="ClearJobCardBtn_OnClick">
+                        Clear
+                    </Button>
                 </Grid>
             </StackPanel>
         </GroupBox>

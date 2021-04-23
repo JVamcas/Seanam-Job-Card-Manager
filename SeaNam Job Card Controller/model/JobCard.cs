@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using NHibernate.Criterion;
 using SeaNam_Job_Card_Controller.Annotations;
 
 namespace SeaNam_Job_Card_Controller.model
 {
-    public  class JobCard : INotifyPropertyChanged
+    public  class JobCard :AbstractModel, INotifyPropertyChanged
     {
-        public virtual int Id { get; protected set; }
+        
         public virtual string JobCardNo { get; set; }
-        public virtual JobTitle JobTitle { get; set; } // the title for this job not employee job title
+        // public virtual JobTitle JobTitle { get; set; } // the title for this job not employee job title
         public virtual string JobDescription { get; set; }
         public virtual WorkArea WorkArea { get; set; }
         public virtual JobClass JobClass { get; set; }

@@ -11,7 +11,6 @@ namespace SeaNam_Job_Card_Controller.mapping
             References(x => x.Employee);
             References(x => x.Supervisor);
             References(x => x.JobClass);
-            References(x => x.JobTitle);
             References(x => x.WorkArea);
             Map(x => x.CreateDate);
             Map(x => x.StartTime);

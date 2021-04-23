@@ -17,6 +17,7 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
         private WorkAreaRepo _workAreaRepo = new WorkAreaRepo();
         private JobClassRepo _classRepo = new JobClassRepo();
         private OrderRepo _orderRepo = new OrderRepo();
+        private JobCardRepo _jobCardRepo = new JobCardRepo();
 
         public JobCard()
         {
@@ -42,12 +43,18 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void SaveJobCardBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            _jobCardDetails.JobClass = JobClassList[(int) JobClassCombo.SelectedItem];
-            _jobCardDetails.WorkArea = WorkAreaList[(int) JobClassCombo.SelectedItem];
+            var jobClassIdx = JobClassList.IndexOf((JobClass) JobClassCombo.SelectedItem);
+            var workAreaIdx = WorkAreaList.IndexOf((WorkArea) WorkAreaCombo.SelectedItem);
+
+            _jobCardDetails.JobClass = JobClassList[jobClassIdx];
+            _jobCardDetails.WorkArea = WorkAreaList[workAreaIdx];
             _jobCardDetails.OrderList = OrderNoList.ToList();
+
+            _jobCardRepo.AddModel(_jobCardDetails);
+            _jobCardDetails = new model.JobCard();
         }
 
-        private void ClearJobCardForm_OnClick(object sender, RoutedEventArgs e)
+        private void ClearJobCardBtn_OnClick(object sender, RoutedEventArgs e)
         {
             _jobCardDetails = new model.JobCard();
             DataContext = _jobCardDetails;
@@ -91,12 +98,12 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void DeleteJobClass_OnClick(object sender, RoutedEventArgs e)
         {
-            if(!(JobClassCombo.SelectedItem is JobClass area)) return;
+            if (!(JobClassCombo.SelectedItem is JobClass area)) return;
             _classRepo.DeleteModel(area);
             JobClassList.Clear();
             JobClassList.AddAll(_classRepo.LoadModels());
         }
-        
+
         private void AddOrderNo_OnClick(object sender, RoutedEventArgs e)
         {
             var areaPage = new OrderNumberPage(OrderNoList, new OrderNumber());
@@ -112,7 +119,7 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void DeleteOrderNo_OnClick(object sender, RoutedEventArgs e)
         {
-            if(!(OrdersCombo.SelectedItem is OrderNumber area)) return;
+            if (!(OrdersCombo.SelectedItem is OrderNumber area)) return;
             _orderRepo.DeleteModel(area);
             OrderNoList.Clear();
             OrderNoList.AddAll(_orderRepo.LoadModels());

@@ -15,7 +15,6 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
             JobCardList.Add(
                 new model.JobCard {CreateDate = DateTime.Today, 
                     WorkArea = new WorkArea {Name = "SeaNam"},
-                    JobTitle = new JobTitle{TitleValue = "BoilerMaker"},
                     JobCardNo = "JA020",
                     JobDescription = "Repair of a water pump down south of Washington DC."
                 }
@@ -23,7 +22,6 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
             JobCardList.Add(
                 new model.JobCard {CreateDate = DateTime.Today, 
                     WorkArea = new WorkArea {Name = "SeaNam"},
-                    JobTitle = new JobTitle{TitleValue = "BoilerMaker"},
                     JobCardNo = "JA020",
                     JobDescription = "Repair of a water pump down south of Washington DC."
                 }

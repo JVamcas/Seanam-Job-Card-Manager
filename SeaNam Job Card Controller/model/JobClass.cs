@@ -5,9 +5,9 @@ using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.model
 {
-    public class JobClass: INotifyPropertyChanged
+    public class JobClass:AbstractModel, INotifyPropertyChanged
     {
-        public virtual int Id { get; protected set; }
+       
         public virtual string Name { get; set; } = "";
 
         public virtual int ClassNo { get; set; } = 0000;

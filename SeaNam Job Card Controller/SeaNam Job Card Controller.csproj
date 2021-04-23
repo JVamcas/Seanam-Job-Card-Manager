@@ -112,6 +112,7 @@
         <Compile Include="mapping\JobTitleMap.cs" />
         <Compile Include="mapping\OrderMap.cs" />
         <Compile Include="mapping\WorkAreaMap.cs" />
+        <Compile Include="model\AbstractModel.cs" />
         <Compile Include="repo\AbstractRepo.cs" />
         <Compile Include="repo\EmployeeRepo.cs" />
         <Compile Include="repo\JobCardRepo.cs" />
