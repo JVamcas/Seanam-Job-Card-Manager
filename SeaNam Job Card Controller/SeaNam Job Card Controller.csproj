@@ -118,12 +118,15 @@
         <Compile Include="repo\JobClassRepo.cs" />
         <Compile Include="repo\OrderRepo.cs" />
         <Compile Include="repo\WorkAreaRepo.cs" />
-        <Compile Include="ui\AbstractWindow.cs" />
+        <Compile Include="ui\AbstractComboBoxEditWindow.cs" />
         <Compile Include="ui\jobcards\Job Card.xaml.cs">
           <DependentUpon>Job Card.xaml</DependentUpon>
         </Compile>
         <Compile Include="ui\jobcards\JobCardTable.xaml.cs">
           <DependentUpon>JobCardTable.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="ui\JobClassPage.xaml.cs">
+          <DependentUpon>JobClassPage.xaml</DependentUpon>
         </Compile>
         <Compile Include="ui\WorkAreaPage.xaml.cs">
           <DependentUpon>WorkAreaPage.xaml</DependentUpon>
@@ -144,6 +147,7 @@
         </Compile>
         <Page Include="ui\jobcards\Job Card.xaml" />
         <Page Include="ui\jobcards\JobCardTable.xaml" />
+        <Page Include="ui\JobClassPage.xaml" />
         <Page Include="ui\WorkAreaPage.xaml" />
     </ItemGroup>
     <ItemGroup>

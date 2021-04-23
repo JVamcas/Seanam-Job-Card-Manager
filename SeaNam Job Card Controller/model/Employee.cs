@@ -9,6 +9,8 @@ namespace SeaNam_Job_Card_Controller.model
         public virtual int Id { get; protected set; }
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
+        
+        public virtual string Password { get; set; }
         public virtual JobTitle EmployeeTitle { get; set; }
         public virtual UserGroup UserGroup { get; set; } = UserGroup.Employee;
         

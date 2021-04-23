@@ -61,9 +61,9 @@
                               Width="170">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Edit" />
-                                <MenuItem Header="Delete" />
-                                <MenuItem Header="Add Class" />
+                                <MenuItem Header="Edit" Click="EditJobClass_OnClick"/>
+                                <MenuItem Header="Delete" Click="DeleteJobClass_OnClick" />
+                                <MenuItem Header="Add Class" Click="AddJobClass_OnClick"/>
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>

@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using SeaNam_Job_Card_Controller.model;
 
-namespace SeaNam_Job_Card_Controller.jobcards
+namespace SeaNam_Job_Card_Controller.ui.jobcards
 {
     public partial class JobCardTable : Page
     {

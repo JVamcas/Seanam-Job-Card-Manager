@@ -1,55 +1,35 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Input;
 using SeaNam_Job_Card_Controller.model;
 using SeaNam_Job_Card_Controller.repo;
-using SeaNam_Job_Card_Controller.Utils;
 
 namespace SeaNam_Job_Card_Controller.ui
 {
-    public partial class WorkAreaPage : AbstractWindow
+    public partial class WorkAreaPage
     {
-        private readonly WorkAreaRepo _repo = new WorkAreaRepo();
-        private readonly WorkArea _workArea;
-        private readonly ObservableCollection<WorkArea> _workAreaList = new ObservableCollection<WorkArea>();
-
         public WorkAreaPage()
         {
             InitializeComponent();
-            _workArea = new WorkArea();
-            DataContext = _workArea;
         }
 
-        public WorkAreaPage(WorkArea area) : this()
+        public WorkAreaPage(ObservableCollection<WorkArea> workAreas,WorkArea workArea = null) :this()
         {
-            _workArea = area;
-            DataContext = _workArea;
+            Repo = new WorkAreaRepo();
+            Model = workArea ?? new WorkArea();
+            ModelList = workAreas ?? new ObservableCollection<WorkArea>();
+            DataContext = Model;
         }
-
-        public WorkAreaPage(ObservableCollection<WorkArea> workAreas) : this()
-        {
-            _workAreaList = workAreas;
-        }
-
+      
         private void SaveWorkArea_OnClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                _repo.AddModel(_workArea);
-                RefreshComboListItem();
-                Close();
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception.StackTrace);
-            }
+            SaveModel();
         }
 
-        private void RefreshComboListItem()
+        private void On_Enter_Key_Up(object sender, KeyEventArgs e)
         {
-            _workAreaList.Clear();
-            var tempArea = _repo.LoadModels();
-            _workAreaList.AddAll(tempArea);
+            if (e.Key != Key.Enter) return;
+            SaveModel();
         }
     }
 }

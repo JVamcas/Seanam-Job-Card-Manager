@@ -28,17 +28,20 @@ namespace SeaNam_Job_Card_Controller.repo
 
         public void DeleteModel(T model)
         {
-            ISession session = null;
-            try
+            if (model == null)
             {
-                session = _factory.OpenSession();
-                var tx = session?.BeginTransaction();
-                session?.Delete(model);
-                tx?.Commit();
-            }
-            finally
-            {
-                session?.Close();
+                ISession session = null;
+                try
+                {
+                    session = _factory.OpenSession();
+                    var tx = session?.BeginTransaction();
+                    session?.Delete(model);
+                    tx?.Commit();
+                }
+                finally
+                {
+                    session?.Close();
+                }
             }
         }
 
