@@ -128,6 +128,9 @@
         <Compile Include="ui\JobClassPage.xaml.cs">
           <DependentUpon>JobClassPage.xaml</DependentUpon>
         </Compile>
+        <Compile Include="ui\OrderNumberPage.xaml.cs">
+          <DependentUpon>OrderNumberPage.xaml</DependentUpon>
+        </Compile>
         <Compile Include="ui\WorkAreaPage.xaml.cs">
           <DependentUpon>WorkAreaPage.xaml</DependentUpon>
         </Compile>
@@ -148,6 +151,7 @@
         <Page Include="ui\jobcards\Job Card.xaml" />
         <Page Include="ui\jobcards\JobCardTable.xaml" />
         <Page Include="ui\JobClassPage.xaml" />
+        <Page Include="ui\OrderNumberPage.xaml" />
         <Page Include="ui\WorkAreaPage.xaml" />
     </ItemGroup>
     <ItemGroup>

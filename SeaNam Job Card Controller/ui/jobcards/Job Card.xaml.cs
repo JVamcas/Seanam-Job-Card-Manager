@@ -13,7 +13,7 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
         private model.JobCard _jobCardDetails = new model.JobCard();
         private ObservableCollection<WorkArea> WorkAreaList;
         private ObservableCollection<JobClass> JobClassList;
-        private ObservableCollection<OrderNumber> JobCardOrderList;
+        private ObservableCollection<OrderNumber> OrderNoList;
         private WorkAreaRepo _workAreaRepo = new WorkAreaRepo();
         private JobClassRepo _classRepo = new JobClassRepo();
         private OrderRepo _orderRepo = new OrderRepo();
@@ -31,20 +31,20 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
             var jobClassList = _classRepo.LoadModels();
             JobClassList.AddAll(jobClassList);
 
-            JobCardOrderList = new ObservableCollection<OrderNumber>();
+            OrderNoList = new ObservableCollection<OrderNumber>();
             var orders = _orderRepo.LoadOrders(_jobCardDetails.Id);
-            JobCardOrderList.AddAll(orders);
+            OrderNoList.AddAll(orders);
 
             WorkAreaCombo.ItemsSource = WorkAreaList;
             JobClassCombo.ItemsSource = JobClassList;
-            OrdersCombo.ItemsSource = JobCardOrderList;
+            OrdersCombo.ItemsSource = OrderNoList;
         }
 
         private void SaveJobCardBtn_OnClick(object sender, RoutedEventArgs e)
         {
             _jobCardDetails.JobClass = JobClassList[(int) JobClassCombo.SelectedItem];
             _jobCardDetails.WorkArea = WorkAreaList[(int) JobClassCombo.SelectedItem];
-            _jobCardDetails.OrderList = JobCardOrderList.ToList();
+            _jobCardDetails.OrderList = OrderNoList.ToList();
         }
 
         private void ClearJobCardForm_OnClick(object sender, RoutedEventArgs e)
@@ -84,19 +84,38 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void EditJobClass_OnClick(object sender, RoutedEventArgs e)
         {
-            var area = JobClassCombo.SelectedItem as JobClass;
-            if (area == null) return;
+            if (!(JobClassCombo.SelectedItem is JobClass area)) return;
             new JobClassPage(JobClassList, area).ShowDialog();
             JobClassCombo.SelectedItem = area;
         }
 
         private void DeleteJobClass_OnClick(object sender, RoutedEventArgs e)
         {
-            var area = JobClassCombo.SelectedItem as JobClass;
-            if(area == null) return;
+            if(!(JobClassCombo.SelectedItem is JobClass area)) return;
             _classRepo.DeleteModel(area);
             JobClassList.Clear();
             JobClassList.AddAll(_classRepo.LoadModels());
+        }
+        
+        private void AddOrderNo_OnClick(object sender, RoutedEventArgs e)
+        {
+            var areaPage = new OrderNumberPage(OrderNoList, new OrderNumber());
+            areaPage.ShowDialog();
+        }
+
+        private void EditOrderNo_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (!(OrdersCombo.SelectedItem is OrderNumber area)) return;
+            new OrderNumberPage(OrderNoList, area).ShowDialog();
+            OrdersCombo.SelectedItem = area;
+        }
+
+        private void DeleteOrderNo_OnClick(object sender, RoutedEventArgs e)
+        {
+            if(!(OrdersCombo.SelectedItem is OrderNumber area)) return;
+            _orderRepo.DeleteModel(area);
+            OrderNoList.Clear();
+            OrderNoList.AddAll(_orderRepo.LoadModels());
         }
     }
 }

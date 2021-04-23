@@ -79,9 +79,9 @@
                               Width="170">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Edit" />
-                                <MenuItem Header="Delete" />
-                                <MenuItem Header="Add Order" />
+                                <MenuItem Header="Edit" Click="EditOrderNo_OnClick" />
+                                <MenuItem Header="Delete"  Click="DeleteOrderNo_OnClick"/>
+                                <MenuItem Header="Add Order"  Click="AddOrderNo_OnClick"/>
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>
