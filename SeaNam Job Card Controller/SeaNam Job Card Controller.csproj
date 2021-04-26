@@ -126,6 +126,9 @@
         <Compile Include="ui\jobcards\JobCardTable.xaml.cs">
           <DependentUpon>JobCardTable.xaml</DependentUpon>
         </Compile>
+        <Compile Include="ui\jobcards\users\UsersControl.xaml.cs">
+          <DependentUpon>UsersControl.xaml</DependentUpon>
+        </Compile>
         <Compile Include="ui\JobClassPage.xaml.cs">
           <DependentUpon>JobClassPage.xaml</DependentUpon>
         </Compile>
@@ -151,6 +154,7 @@
         </Compile>
         <Page Include="ui\jobcards\Job Card.xaml" />
         <Page Include="ui\jobcards\JobCardTable.xaml" />
+        <Page Include="ui\jobcards\users\UsersControl.xaml" />
         <Page Include="ui\JobClassPage.xaml" />
         <Page Include="ui\OrderNumberPage.xaml" />
         <Page Include="ui\WorkAreaPage.xaml" />

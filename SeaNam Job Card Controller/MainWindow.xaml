@@ -94,7 +94,16 @@
                            HorizontalContentAlignment="Center" Background="DarkGray" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Users" />
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="Users" 
+                           MouseLeftButtonDown="UserTab_OnClick" 
+                           HorizontalAlignment="Stretch"/>
+                </TabItem.Header>
+                <Frame  x:Name="UserWindowPanel" VerticalAlignment="Stretch"
+                        VerticalContentAlignment="Top" HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" Background="DarkGray" />
+            </TabItem>
             <TabItem Header="Reports" />
             <TabItem Header="Help" />
         </TabControl>

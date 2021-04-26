@@ -10,7 +10,6 @@ namespace SeaNam_Job_Card_Controller.model
     {
         
         public virtual string JobCardNo { get; set; }
-        // public virtual JobTitle JobTitle { get; set; } // the title for this job not employee job title
         public virtual string JobDescription { get; set; }
         public virtual WorkArea WorkArea { get; set; }
         public virtual JobClass JobClass { get; set; }

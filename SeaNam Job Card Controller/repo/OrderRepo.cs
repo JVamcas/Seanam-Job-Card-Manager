@@ -15,7 +15,7 @@ namespace SeaNam_Job_Card_Controller.repo
                 try
                 {
                     session = _factory.OpenSession();
-                    var models = session.CreateSQLQuery("Select * from ordernumbers o where o.JobCard_id=:jobCardId")
+                    var models = session.CreateSQLQuery("Select * from ordernumber o where o.JobCard_id=:jobCardId")
                         .AddEntity("order",typeof(OrderNumber))
                         .SetParameter("jobCardId",jobCardId)
                         .List<OrderNumber>();

@@ -57,6 +57,7 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
             _jobCardRepo.AddModel(_jobCardDetails);
             _jobCardDetails = new model.JobCard();
+            DataContext = _jobCardDetails;
         }
 
         private void ClearJobCardBtn_OnClick(object sender, RoutedEventArgs e)

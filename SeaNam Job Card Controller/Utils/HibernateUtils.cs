@@ -42,7 +42,7 @@ namespace SeaNam_Job_Card_Controller.Utils
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JobTitleMap>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<OrderNumberMap>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JobCardMap>())
-                        .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(true, true))
+                        // .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false))                        
                         .BuildSessionFactory();
                 }
             }

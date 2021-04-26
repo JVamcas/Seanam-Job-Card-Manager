@@ -61,3 +61,5 @@ C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controlle
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\JobClassPage.baml
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\OrderNumberPage.g.cs
 C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\OrderNumberPage.baml
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\users\UsersControl.g.cs
+C:\Users\user\RiderProjects\SeaNam Job Card Controller\SeaNam Job Card Controller\obj\Debug\ui\jobcards\users\UsersControl.baml
