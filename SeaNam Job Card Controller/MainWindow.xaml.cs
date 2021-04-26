@@ -26,7 +26,7 @@ namespace SeaNam_Job_Card_Controller
 
         private void UserTab_OnClick(object sender, MouseButtonEventArgs e)
         {
-            UserWindowPanel.Source = new Uri("ui/jobcards/users/UsersControl.xaml",UriKind.RelativeOrAbsolute);
+            UserWindowPanel.Source = new Uri("ui/users/UsersControl.xaml",UriKind.RelativeOrAbsolute);
         }
     }
 }

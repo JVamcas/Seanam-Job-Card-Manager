@@ -1,10 +1,9 @@
-﻿<UserControl x:Class="SeaNam_Job_Card_Controller.ui.jobcards.users.UsersControl"
+﻿<UserControl x:Class="SeaNam_Job_Card_Controller.ui.users.UsersControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:SeaNam_Job_Card_Controller.ui.jobcards.users"
-             
+
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Regular"
              TextElement.FontSize="13"
@@ -16,92 +15,98 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Width="400" Background="LightSlateGray">
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Margin="5 ">First Name</Label>
-            <TextBox Grid.Row="0" Grid.Column="1" 
-                     Margin="5 5" 
-                     Padding="6"
-                     Style="{DynamicResource MaterialDesignOutlinedTextBox}"
-                     Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged }" />
-            <Label Grid.Column="0" Grid.Row="1" Margin="5 ">Last Name</Label>
-            <TextBox Grid.Row="1" Grid.Column="1" 
-                     Margin="5 5" 
-                     Padding="6"
-                     Style="{DynamicResource MaterialDesignOutlinedTextBox}"
-                     Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged }" />
-            <Label Grid.Column="0" Grid.Row="2" Margin="5 ">Job Title</Label>
-            <ComboBox Grid.Row="2" Grid.Column="1" Padding="6" HorizontalAlignment="Stretch"
-                      IsEditable="True" Focusable="True"
-                      Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                      Margin="5 5"
-                      ToolTip="The employee title e.g Electrician."
-                      SelectedItem="{Binding EmployeeTitle}"
-                      IsSynchronizedWithCurrentItem="True"
-            >
-                <ComboBox.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Edit" Click="EditJobTitle_OnClick" />
-                        <MenuItem Header="Delete" Click="DeleteJobTitle_OnClick" />
-                        <MenuItem Header="Add Area" Click="AddJobTitle_OnClick" />
-                    </ContextMenu>
-                </ComboBox.ContextMenu>
-            </ComboBox>
-            <Label Grid.Column="0" Grid.Row="3" Margin="5 ">User Group</Label>
-            <ComboBox Grid.Row="3" Grid.Column="1" Padding="6" HorizontalAlignment="Stretch"
-                      IsEditable="True" Focusable="True"
-                      Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                      Margin="5 5"
-                      ToolTip="The category for this employee."
-                      SelectedItem="{Binding UserGroup}"
-                      IsSynchronizedWithCurrentItem="True"
-            >
-                <ComboBox.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Edit" Click="EditJobTitle_OnClick" />
-                        <MenuItem Header="Delete" Click="DeleteJobTitle_OnClick" />
-                        <MenuItem Header="Add Area" Click="AddJobTitle_OnClick" />
-                    </ContextMenu>
-                </ComboBox.ContextMenu>
-            </ComboBox>
-            <Label Grid.Row="4" Margin="5 ">Password</Label>
-            <TextBox Grid.Row="4" Grid.Column="1" 
-                         Margin="5 5" 
-                         Padding="6"
-                     Style="{DynamicResource MaterialDesignOutlinedTextBox}"
-                     Text="{Binding Password,UpdateSourceTrigger=PropertyChanged }" />
-            <Grid Grid.Column="1" Grid.Row="5" Margin="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <Button x:Name="SaveUser" Grid.Column="1" Margin="5 0"
-                        ToolTip="Save user details." Click="SaveUserBtn_OnClick">
-                    Save
-                </Button>
-                <Button x:Name="ClearUserDetails" Grid.Column="2" Margin="5 0"
-                        Click="ClearUserBtn_OnClick">
-                    Clear
-                </Button>
+        <StackPanel Grid.Column="0">
+            <GroupBox Header="User Details" Margin="0 5">
+                <Grid Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Margin=" 5 6">First Name</Label>
+                    <TextBox Grid.Row="0" Grid.Column="1"
+                             Margin="5 5"
+                             Padding="6"
+                             Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                             Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged }" />
+                    <Label Grid.Column="0" Grid.Row="1" Margin=" 5 6">Last Name</Label>
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                             Margin="5 5"
+                             Padding="6"
+                             Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                             Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged }" />
+                    <Label Grid.Column="0" Grid.Row="2" Margin=" 5 6">Job Title</Label>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Padding="6" HorizontalAlignment="Stretch"
+                              x:Name="JobTitleCombo"
+                              IsEditable="True" Focusable="True"
+                              Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                              Margin="5 5"
+                              ToolTip="The employee title e.g Electrician."
+                              SelectedItem="{Binding EmployeeTitle}"
+                              IsSynchronizedWithCurrentItem="True">
+                        <ComboBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Edit" Click="EditJobTitle_OnClick" />
+                                <MenuItem Header="Delete" Click="DeleteJobTitle_OnClick" />
+                                <MenuItem Header="Add Job Title" Click="AddJobTitle_OnClick" />
+                            </ContextMenu>
+                        </ComboBox.ContextMenu>
+                    </ComboBox>
+                    <Label Grid.Column="0" Grid.Row="3" Margin=" 5 6">User Group</Label>
+                    <ComboBox Grid.Row="3" Grid.Column="1" Padding="6" HorizontalAlignment="Stretch"
+                              x:Name="UserGroupCombo"
+                              IsEditable="True" Focusable="True"
+                              Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                              Margin="5 5"
+                              ToolTip="The category for this employee."
+                              SelectedItem="{Binding UserGroup}"
+                              IsSynchronizedWithCurrentItem="True">
+                    </ComboBox>
+                    <Label Grid.Row="4" Margin="5 ">Password</Label>
+                    <TextBox Grid.Row="4" Grid.Column="1"
+                             Margin="5 5"
+                             Padding="6"
+                             Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                             Text="{Binding Password,UpdateSourceTrigger=PropertyChanged }" />
+                    <Grid Grid.Column="1" Grid.Row="5" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" Margin="5 0"
+                                ToolTip="Save user details." Click="SaveUserBtn_OnClick">
+                            Save
+                        </Button>
+                        <Button Grid.Column="2" Margin="5 0"
+                                Click="ClearUserBtn_OnClick">
+                            Clear
+                        </Button>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+        <GroupBox Grid.Column="1" Margin="5 5">
+            <Grid>
+                <DataGrid x:Name="EmployeesGrid" AlternationCount = "2" AlternatingRowBackground="DimGray">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Width="200" Header="First Name" Binding="{Binding FirstName}" />
+                        <DataGridTextColumn Width="200" Header="last Name" Binding="{Binding LastName}"/>
+                        <DataGridTextColumn Width="200" Header="Job Title" Binding="{Binding EmployeeTitle}"/>
+                        <DataGridTextColumn Width="200" Header="User Group" Binding="{Binding UserGroup}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
-        </Grid>
-        <DataGrid Grid.Column="1">
-            
-        </DataGrid>
+        </GroupBox>
     </Grid>
 </UserControl>
