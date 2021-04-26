@@ -10,7 +10,7 @@ namespace SeaNam_Job_Card_Controller.model
         public virtual string LastName { get; set; }
         
         public virtual string Password { get; set; }
-        public virtual JobTitle EmployeeTitle { get; set; }
+        public virtual JobTitle EmployeeTitle { get; set; } //e.g Electrician or Mechanics
         public virtual UserGroup UserGroup { get; set; } = UserGroup.Employee;
         
         public override string ToString()

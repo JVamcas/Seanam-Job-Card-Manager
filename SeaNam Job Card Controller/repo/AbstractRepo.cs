@@ -10,7 +10,7 @@ namespace SeaNam_Job_Card_Controller.repo
     {
         protected readonly ISessionFactory _factory = HibernateUtils.NewInstance();
 
-        public void AddModel(T model)
+        public virtual void AddModel(T model)
         {
             ISession session = null;
             try

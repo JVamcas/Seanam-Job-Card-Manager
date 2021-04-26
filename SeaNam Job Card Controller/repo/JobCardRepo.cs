@@ -16,11 +16,6 @@ namespace SeaNam_Job_Card_Controller.repo
             
         }
 
-        public void DeleteJobCard(JobCard jobCard)
-        {
-          
-        }
-
         public JobCard FindJobCard(string JobCardId)
         {
             return null;
@@ -30,5 +25,15 @@ namespace SeaNam_Job_Card_Controller.repo
         {
             return null;
         }
+
+        // public override void AddModel(JobCard model)
+        // {
+        //     base.AddModel(model);
+        //     var orderRepo = new OrderRepo();
+        //     foreach (var order in model.OrderList)
+        //     {
+        //         order.
+        //     }
+        // }
     }
 }

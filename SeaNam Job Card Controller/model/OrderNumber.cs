@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using SeaNam_Job_Card_Controller.Annotations;
 using SeaNam_Job_Card_Controller.Utils;
@@ -13,6 +14,7 @@ namespace SeaNam_Job_Card_Controller.model
         {
             return OrderNo != null ? OrderNo.ToTitleCase():"";
         }
+        
 
         public virtual event PropertyChangedEventHandler PropertyChanged;
 

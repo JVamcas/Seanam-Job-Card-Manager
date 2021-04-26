@@ -6,7 +6,7 @@ namespace SeaNam_Job_Card_Controller.model
 {
     public abstract class AbstractModel
     {
-        public virtual int Id { get; protected set; }
+        public virtual int Id { get;  set; }
 
         public override bool Equals([CanBeNull] Object obj)
         {

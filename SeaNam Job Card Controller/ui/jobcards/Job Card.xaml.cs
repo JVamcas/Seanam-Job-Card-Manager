@@ -22,6 +22,11 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
         public JobCard()
         {
             InitializeComponent();
+            _jobCardDetails.Employee = new Employee
+                {Id = 1, FirstName = "Petrus", LastName = "Kambala", 
+                    Password = "3Mili2,87",UserGroup = UserGroup.Employee,
+                    EmployeeTitle = new JobTitle{Id = 1}
+                };
             DataContext = _jobCardDetails;
 
             WorkAreaList = new ObservableCollection<WorkArea>();
@@ -106,23 +111,23 @@ namespace SeaNam_Job_Card_Controller.ui.jobcards
 
         private void AddOrderNo_OnClick(object sender, RoutedEventArgs e)
         {
-            var areaPage = new OrderNumberPage(OrderNoList, new OrderNumber());
+            var areaPage = new OrderNumberPage(OrderNoList, _jobCardDetails.Id,new OrderNumber());
             areaPage.ShowDialog();
         }
 
         private void EditOrderNo_OnClick(object sender, RoutedEventArgs e)
         {
             if (!(OrdersCombo.SelectedItem is OrderNumber area)) return;
-            new OrderNumberPage(OrderNoList, area).ShowDialog();
+            new OrderNumberPage(OrderNoList,_jobCardDetails.Id, area).ShowDialog();
             OrdersCombo.SelectedItem = area;
         }
 
         private void DeleteOrderNo_OnClick(object sender, RoutedEventArgs e)
         {
-            if (!(OrdersCombo.SelectedItem is OrderNumber area)) return;
-            _orderRepo.DeleteModel(area);
+            if (!(OrdersCombo.SelectedItem is OrderNumber order)) return;
+            _orderRepo.DeleteModel(order);
             OrderNoList.Clear();
-            OrderNoList.AddAll(_orderRepo.LoadModels());
+            OrderNoList.AddAll(_orderRepo.LoadOrders(_jobCardDetails.Id));
         }
     }
 }
