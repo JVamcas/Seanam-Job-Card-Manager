@@ -36,22 +36,26 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
-                    <Label HorizontalAlignment="Right" Grid.Column="0" Margin="5 5">Job Card No:</Label>
-                    <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}" 
-                             Margin="5 5"
+                    <Label HorizontalAlignment="Right" Grid.Column="0" Margin="1 5">Job Card No:</Label>
+                    <TextBox Grid.Row="0" HorizontalAlignment="Left" Grid.Column="1" 
+                             Style="{DynamicResource MaterialDesignOutlinedTextBox}" 
+                             Margin="1 5"
                              Text="{Binding JobCardNo}"
                              ToolTip="The job card number."
-                             Padding="6" />
-                    <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="5 5">Class:</Label>
-                    <ComboBox Grid.Row="0" Grid.Column="3" Padding="6" IsEditable="True"
+                             Padding="6" 
+                             Width="260"
+                             />
+                    <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="1 5">Class:</Label>
+                    <ComboBox Grid.Row="0" Grid.Column="3" Padding="6"
                               Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                              Margin="5 5"
+                              Margin="1 5"
+                              IsEditable="True" Focusable="True"
                               x:Name="JobClassCombo"
                               ToolTip="Class for this job."
                               SelectedItem="{Binding JobClass}"
                               IsSynchronizedWithCurrentItem="True"
                               SelectedValuePath="Id"
-                              Width="220">
+                              Width="260">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Edit" Click="EditJobClass_OnClick" />
@@ -60,16 +64,17 @@
                             </ContextMenu>
                         </ComboBox.ContextMenu>
                     </ComboBox>
-                    <Label Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" Width="60" Margin="5 5">Area:</Label>
-                    <ComboBox Grid.Row="1" Grid.Column="1" Padding="6"
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"  Margin="1 5">Area:</Label>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Padding="6" HorizontalAlignment="Left"
                               IsEditable="True" Focusable="True"
                               Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                              Margin="5 5"
+                              Margin="1 5"
                               ToolTip="The area where the job was done."
                               x:Name="WorkAreaCombo"
                               SelectedItem="{Binding WorkArea}"
                               IsSynchronizedWithCurrentItem="True"
-                              Width="170">
+                              Width="260"
+                              >
                         <ComboBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Edit" Click="EditWorkArea_OnClick" />
@@ -79,16 +84,16 @@
                         </ComboBox.ContextMenu>
                     </ComboBox>
 
-                    <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Width="Auto" Margin="5 5">Order Number(s):</Label>
+                    <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="1 5">Order Number(s):</Label>
                     <ComboBox Grid.Row="1" Grid.Column="3" Padding="6" IsEditable="True" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
-                              Margin="5 5"
+                              Margin="1 5"
                               x:Name="OrdersCombo"
                               ToolTip="Orders related to this job."
                               SelectedItem="{Binding Orders}"
                               IsSynchronizedWithCurrentItem="True"
                               SelectedValuePath="Id"
                               DisplayMemberPath="OrderNo"
-                              Width="170">
+                              Width="260">
                         <ComboBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Edit" Click="EditOrderNo_OnClick" />
